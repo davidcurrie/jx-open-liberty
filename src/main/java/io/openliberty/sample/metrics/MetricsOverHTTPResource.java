@@ -43,7 +43,7 @@ public class MetricsOverHTTPResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getMetrics(@PathParam("scope") String scope) {
         String metricsPath = "/metrics/";
-        String url = "https://" + uriInfo.getBaseUri().getHost() + ":" + 9443 + metricsPath + scope;
+        String url = "https://localhost:9443" + metricsPath + scope;
         String credentials = "admin:adminpwd";
         String base64encoded = Base64.getEncoder().encodeToString(credentials.getBytes());
         Client client = ClientBuilder.newClient();
